@@ -15,8 +15,11 @@ class Employee:
             pay += self.hours * self.salary
         else:
             pay += self.salary
-        if self.bonus_count != -1:
-            pay += self.bonus * self.bonus_count
+        if self.bonus != 0:
+            if self.bonus_count != -1:
+                pay += self.bonus_count * self.bonus
+            else:
+                pay += self.bonus
         return pay
 
     def __str__(self):
@@ -31,6 +34,8 @@ class Employee:
                 output += f'for {self.bonus_count} contract(s) at {self.bonus}/contract.'
             else:
                 output += f'of {self.bonus}.'
+        else:
+            output += '.'
         output += f' Their total pay is {self.get_pay()}.'
         return output
 
