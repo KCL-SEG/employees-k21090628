@@ -15,8 +15,11 @@ class Employee:
             pay += self.hours * self.salary
         else:
             pay += self.salary
-        if self.bonus_count != -1:
-            pay += self.bonus * self.bonus_count
+        if self.bonus != 0:
+            if self.bonus_count != -1:
+                pay += self.bonus_count * self.bonus
+            else:
+                pay += self.bonus
         return pay
 
     def __str__(self):
@@ -31,6 +34,8 @@ class Employee:
                 output += f'for {self.bonus_count} contract(s) at {self.bonus}/contract.'
             else:
                 output += f'of {self.bonus}.'
+        else:
+            output += '.'
         output += f' Their total pay is {self.get_pay()}.'
         return output
 
@@ -52,3 +57,16 @@ robbie = Employee('Robbie', salary=2000, bonus=1500)
 
 # Ariel works on a contract of 120 hours at 30/hour and receives a bonus commission of 600.  Their total pay is 4200.
 ariel = Employee('Ariel', salary=30, hours=120, bonus=600)
+
+print(billie.get_pay())
+print(str(billie))
+print(charlie.get_pay())
+print(str(charlie))
+print(renee.get_pay())
+print(str(renee))
+print(jan.get_pay())
+print(str(jan))
+print(robbie.get_pay())
+print(str(robbie))
+print(ariel.get_pay())
+print(str(ariel))
