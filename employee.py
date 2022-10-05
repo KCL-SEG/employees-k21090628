@@ -29,11 +29,11 @@ class Employee:
         else:
             output += f'monthly salary of {self.salary}'
         if self.bonus != 0:
-            output += f' and receives a bonus commission '
+            output += f' and receives a '
             if self.bonus_count != -1:
-                output += f'for {self.bonus_count} contract(s) at {self.bonus}/contract.'
+                output += f'commission for {self.bonus_count} contract(s) at {self.bonus}/contract.'
             else:
-                output += f'of {self.bonus}.'
+                output += f'bonus commission of {self.bonus}.'
         else:
             output += '.'
         output += f' Their total pay is {self.get_pay()}.'
